@@ -7,6 +7,7 @@
 </template>
 
 <script>
+    import pubsub from 'pubsub-js'
     export default {
         name:'Student',
         data() {
@@ -18,7 +19,10 @@
         // 在一个兄弟组件里用 $emit 发生事件以及数据
         methods: {
             sendStudentName(){
-                this.EventBus.$emit('hello',this.name)
+                // this.EventBus.$emit('hello',this.name)
+
+                // 发布消息
+                pubsub.publish('hello',666)
             }
         },
     } 

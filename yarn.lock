@@ -1623,6 +1623,11 @@
   "resolved" "https://registry.nlark.com/alphanum-sort/download/alphanum-sort-1.0.2.tgz"
   "version" "1.0.2"
 
+"animate.css@^4.1.1":
+  "integrity" "sha1-YU7FqBEx1+TcNipYFD90BqvWgHU="
+  "resolved" "https://registry.nlark.com/animate.css/download/animate.css-4.1.1.tgz"
+  "version" "4.1.1"
+
 "ansi-colors@^3.0.0":
   "integrity" "sha1-46PaS/uubIapwoViXeEkojQCb78="
   "resolved" "https://registry.nlark.com/ansi-colors/download/ansi-colors-3.2.4.tgz"
@@ -6798,6 +6803,11 @@
     "parse-asn1" "^5.0.0"
     "randombytes" "^2.0.1"
     "safe-buffer" "^5.1.2"
+
+"pubsub-js@^1.9.4":
+  "integrity" "sha512-hJYpaDvPH4w8ZX/0Fdf9ma1AwRgU353GfbaVfPjfJQf1KxZ2iHaHl3fAUw1qlJIR5dr4F3RzjGaWohYUEyoh7A=="
+  "resolved" "https://registry.npmmirror.com/pubsub-js/download/pubsub-js-1.9.4.tgz?cache=0&sync_timestamp=1636629750665&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fpubsub-js%2Fdownload%2Fpubsub-js-1.9.4.tgz"
+  "version" "1.9.4"
 
 "pump@^2.0.0":
   "integrity" "sha1-Ejma3W5M91Jtlzy8i1zi4pCLOQk="

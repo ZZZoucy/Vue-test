@@ -11,9 +11,10 @@
 </template>
 
 <script>
+    import pubsub from 'pubsub-js'
 	import MyHeader from './components/MyHeader'
 	import MyList from './components/MyList'
-	import MyFooter from './components/MyFooter.vue'
+	import MyFooter from './components/MyFooter'
 
 	export default {
 		name:'App',
@@ -25,27 +26,28 @@
 			}
 		},
 		methods: {
-			//添加一个todo
+			// 添加一个todo
 			addTodo(todoObj){
 				this.todos.unshift(todoObj)
 			},
-			//勾选or取消勾选一个todo
+			// 勾选or取消勾选一个todo
 			checkTodo(id){
 				this.todos.forEach((todo)=>{
 					if(todo.id === id) todo.done = !todo.done
 				})
 			},
-			//删除一个todo
-			deleteTodo(id){
+			// 删除一个todo 
+			// _ 指占位的参数，因为不能没有这个参数，但是这个参数又不需要使用
+			deleteTodo(_,id){
 				this.todos = this.todos.filter( todo => todo.id !== id )
 			},
-			//全选or取消全选
+			// 全选or取消全选
 			checkAllTodo(done){
 				this.todos.forEach((todo)=>{
 					todo.done = done
 				})
 			},
-			//清除所有已经完成的todo
+			// 清除所有已经完成的todo
 			clearAllTodo(){
 				this.todos = this.todos.filter((todo)=>{
 					return !todo.done
@@ -62,11 +64,13 @@
 		},
 		mounted(){
 			this.EventBus.$on('checkTodo',this.checkTodo)
-			this.EventBus.$on('deleteTodo',this.deleteTodo)
+			// this.EventBus.$on('deleteTodo',this.deleteTodo)
+			this.pibId = pubsub.subscribe('deleteTodo',this.deleteTodo)
 		},
 		beforeDestroy(){
 			this.EventBus.$off('checkTodo')
-			this.EventBus.$off('deleteTodo')
+			// this.EventBus.$off('deleteTodo')
+			pubsub.unsubscribe(this.pibId)
 		}
 	}
 </script>
